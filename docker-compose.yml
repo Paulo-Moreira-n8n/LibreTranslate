@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - LT_API_KEYS=false
+    volumes:
+      - libretranslate_models:/home/libretranslate/.local
+    restart: unless-stopped
+
+volumes:
+  libretranslate_models:
